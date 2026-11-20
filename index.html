@@ -46,16 +46,16 @@ section.content{padding:88px 6vw;max-width:1200px;margin:auto}.center{text-align
 @media(max-width:760px){.game-grid{grid-template-columns:1fr}.game-card{padding:19px}.game-card p{min-height:0}}
 @media(max-width:760px){.nav{gap:10px}.nav a{font-size:8px}.photo-grid{gap:17px;padding:18px 12px 28px}.photo{flex-basis:68vw;max-width:245px}section.content{padding:70px 20px}.music-card{padding:20px}.topbar{padding:10px 15px}.brand{font-size:23px}.memories:before,.memories:after{font-size:55px}#lightbox{padding:55px 42px 25px}#lightbox img{max-width:88vw;max-height:70vh}.lightbox-nav{top:auto;bottom:20px}}@media(max-width:390px){.nav a:nth-child(2){display:none}.music-card{gap:12px}.disc{width:58px;height:58px}}
 
-/* Subhi's playful fake-hack surprise */
-.subhi-prank{display:none;margin:22px auto 0;padding:20px 16px;max-width:520px;text-align:left;background:#190f12;border:1px solid #a72f3b;box-shadow:0 0 24px #b52d3b30;color:#ffe9e9}
-.subhi-alert{margin:-20px -16px 16px;padding:13px 10px;text-align:center;background:#a7192b;color:#fff;font-weight:700;letter-spacing:.08em;font-size:13px;animation:subhiPulse 1s infinite alternate}
-.subhi-prank p{color:#ffd9d9;margin:8px 0;font-size:12px;line-height:1.6}
-.subhi-lines{font-family:monospace;font-size:11px;line-height:2;color:#ffb7b7;min-height:112px;white-space:pre-line}
-.subhi-lines .done{color:#ff7777}
-.subhi-result{display:none;margin-top:14px;padding:14px;background:#2b171b;border:1px solid #b94754;text-align:center;color:#fff0ed;font-size:13px;line-height:1.7}
-.subhi-result strong{display:block;color:#ff9da5;font-size:16px;margin-bottom:7px}
-.subhi-prank .btn{display:block;margin:15px auto 0;background:#a7192b;border-color:#d65b67;letter-spacing:.04em}
-@keyframes subhiPulse{from{filter:brightness(.85)}to{filter:brightness(1.2)}}
+/* Full-screen Subhi fake-hack prank: no dismiss control until the final button */
+.subhi-prank{display:none;position:fixed;inset:0;z-index:99999;width:100%;height:100vh;height:100dvh;overflow-y:auto;overscroll-behavior:contain;align-items:center;justify-content:center;padding:22px;background:rgba(10,5,7,.96);color:#ffe9e9;touch-action:pan-y}
+.subhi-prank-panel{width:min(560px,100%);max-height:calc(100dvh - 44px);overflow-y:auto;padding:22px 17px;background:radial-gradient(ellipse at top,#35151c,#160d10 70%);border:1px solid #c52f42;box-shadow:0 0 45px #d51f3c55,0 20px 70px #0009;text-align:left}
+.subhi-alert{margin:-22px -17px 18px;padding:16px 10px;text-align:center;background:#b20f2b;color:#fff;font-weight:800;letter-spacing:.07em;font-size:clamp(12px,3.5vw,16px);animation:subhiPulse .8s infinite alternate}
+.subhi-prank p{color:#ffd9d9;margin:8px 0;font-size:13px;line-height:1.7}
+.subhi-lines{font-family:monospace;font-size:clamp(10px,2.8vw,12px);line-height:2;color:#ffb7b7;min-height:130px;white-space:pre-line;overflow-wrap:anywhere}
+.subhi-result{display:none;margin-top:14px;padding:16px 12px;background:#2b171b;border:1px solid #b94754;text-align:center;color:#fff0ed;font-size:13px;line-height:1.8}
+.subhi-result strong{display:block;color:#ff9da5;font-size:17px;margin-bottom:9px}
+.subhi-prank .btn{display:block;width:100%;margin:18px auto 0;background:#a7192b;border-color:#f07883;letter-spacing:.035em;padding:16px 12px}
+@keyframes subhiPulse{from{filter:brightness(.85)}to{filter:brightness(1.25)}}
 
 </style>
 </head>
@@ -79,18 +79,6 @@ section.content{padding:88px 6vw;max-width:1200px;margin:auto}.center{text-align
     <p>Kuch pal tab aur bhi khaas ho jaate hain, jab woh sirf hum dono ke beech hote hain.</p>
     <form onsubmit="unlock(event)"><input id="pass" class="password" type="password" placeholder="Apka naam daliye" autocomplete="off" required><button class="btn" type="submit">Tohfa kholo</button></form>
     <div id="gateError"></div>
-    <div id="subhiPrank" class="subhi-prank" aria-live="polite">
-      <div class="subhi-alert">🚨 WARNING: SUBHI KA PHONE HACK HO GAYA! 🚨</div>
-      <p>Unknown user detected... system scan shuru ho raha hai. 😈</p>
-      <div id="subhiScanLines" class="subhi-lines"></div>
-      <div id="subhiResult" class="subhi-result">
-        <strong>😂 RELAX SUBHI! MAZAAK THA!</strong>
-        Phone hack nahi hua, Instagram aur Snapchat bhi bilkul safe hain! 🙈<br>
-        Aise hi hota hai jab doosron ka surprise dekhne ki koshish karte ho!<br>
-        Ab chup-chaap Simran ko bulao... warna agla prank tumhare liye ready hai! 🤣❤️
-        <button type="button" class="btn" onclick="resetSubhiPrank()">Theek hai, Simran ko bulaati hoon 🙈</button>
-      </div>
-    </div>
     <div class="tiny">Ek chhoti si duniya, sirf tumhare liye ♡</div>
   </div>
 </section>
@@ -191,6 +179,20 @@ section.content{padding:88px 6vw;max-width:1200px;margin:auto}.center{text-align
   <footer class="footer">Khaas tumhare liye, dher saare pyaar ke saath ♡</footer>
 </div>
 <div id="lightbox" onclick="if(event.target===this)closeLightbox()"><button class="close-lightbox" aria-label="Close" onclick="closeLightbox()">×</button><button class="lightbox-nav" style="left:18px" aria-label="Previous photo" onclick="stepLightbox(-1)">‹</button><img id="lightboxImage" alt="Memory photograph"><div class="lightbox-caption" id="lightboxCaption"></div><button class="lightbox-nav" style="right:18px" aria-label="Next photo" onclick="stepLightbox(1)">›</button></div>
+<div id="subhiPrank" class="subhi-prank" role="dialog" aria-modal="true" aria-labelledby="subhiPrankTitle" aria-live="polite">
+  <div class="subhi-prank-panel">
+    <div class="subhi-alert" id="subhiPrankTitle">🚨 WARNING: SUBHI KA PHONE HACK HO GAYA! 🚨</div>
+    <p>Unknown user detected... system scan shuru ho raha hai. 😈</p>
+    <div id="subhiScanLines" class="subhi-lines"></div>
+    <div id="subhiResult" class="subhi-result">
+      <strong>😂 RELAX SUBHI! MAZAAK THA!</strong>
+      Phone hack nahi hua, Instagram aur Snapchat bhi bilkul safe hain! 🙈<br>
+      Aise hi hota hai jab doosron ka surprise dekhne ki koshish karte ho!<br>
+      Ab chup-chaap Simran ko bulao... warna agla prank tumhare liye ready hai! 🤣❤️
+      <button type="button" class="btn" id="subhiDoneButton" onclick="resetSubhiPrank()">Okay, ab Simran ko bulaati hoon 😂</button>
+    </div>
+  </div>
+</div>
 <script>
 // DEMO ONLY: this client-side password is visible in the source and is NOT secure.
 // Before sharing privately, replace this gate with server-side verification (e.g. Supabase Edge Function).
@@ -226,9 +228,8 @@ function unlock(e){
   const val=input.value.trim();
   if(val.toLowerCase()==='subhi'){
     document.getElementById('gateError').textContent='';
-    document.getElementById('subhiPrank').style.display='block';
     input.value='';
-    runSubhiPrank();
+    openSubhiPrank();
     return;
   }
   if(val===DEMO_PASSWORD){
@@ -241,35 +242,69 @@ function unlock(e){
     input.value='';
   }
 }
+let subhiTimers=[];
+function openSubhiPrank(){
+  const overlay=document.getElementById('subhiPrank');
+  overlay.style.display='flex';
+  document.body.style.overflow='hidden';
+  document.documentElement.style.overflow='hidden';
+  document.getElementById('subhiResult').style.display='none';
+  document.getElementById('subhiScanLines').textContent='';
+  runSubhiPrank();
+}
 function runSubhiPrank(){
   const lines=document.getElementById('subhiScanLines');
   const result=document.getElementById('subhiResult');
-  result.style.display='none';
-  lines.textContent='';
   const steps=[
     'Initializing Subhi detection... 100%',
     'Scanning phone gallery photos... 100%',
-    'Checking Instagram account... HACKED! (just kidding)',
-    'Checking Snapchat account... HACKED! (just kidding)',
+    'Checking Instagram account... HACKED!',
+    'Checking Snapchat account... HACKED!',
     'Counting how many times Subhi annoyed Simran... 100%',
     'Finding common sense... ERROR 404 NOT FOUND 😂'
   ];
   steps.forEach((step,index)=>{
-    setTimeout(()=>{
-      lines.textContent += (lines.textContent?'\n':'') + '> ' + step;
+    subhiTimers.push(setTimeout(()=>{
+      lines.textContent += (lines.textContent?'\\n':'') + '> ' + step;
       if(index===steps.length-1){
-        setTimeout(()=>{result.style.display='block';result.scrollIntoView({behavior:'smooth',block:'nearest'});},650);
+        subhiTimers.push(setTimeout(()=>{
+          result.style.display='block';
+          document.getElementById('subhiDoneButton').focus();
+        },700));
       }
-    },850*(index+1));
+    },900*(index+1)));
   });
 }
 function resetSubhiPrank(){
+  subhiTimers.forEach(clearTimeout);
+  subhiTimers=[];
   document.getElementById('subhiPrank').style.display='none';
   document.getElementById('subhiScanLines').textContent='';
   document.getElementById('subhiResult').style.display='none';
+  document.body.style.overflow='';
+  document.documentElement.style.overflow='';
   document.getElementById('pass').value='';
   document.getElementById('pass').focus();
 }
+document.addEventListener('keydown',function(e){
+  const overlay=document.getElementById('subhiPrank');
+  if(!overlay||overlay.style.display!=='flex')return;
+  const done=document.getElementById('subhiDoneButton');
+  const resultVisible=document.getElementById('subhiResult').style.display==='block';
+  if(e.key==='Escape'||e.key==='Backspace'||(!resultVisible&&e.key!=='Tab')){
+    e.preventDefault();e.stopPropagation();return;
+  }
+  if(e.key==='Tab'){
+    if(!resultVisible){e.preventDefault();return;}
+    e.preventDefault();done.focus();
+  }
+},true);
+document.addEventListener('click',function(e){
+  const overlay=document.getElementById('subhiPrank');
+  if(overlay&&overlay.style.display==='flex'&&!overlay.contains(e.target)){
+    e.preventDefault();e.stopPropagation();
+  }
+},true);
 function revealKhat(){document.getElementById('letterText').classList.remove('hidden');document.getElementById('letterButton').classList.add('hidden')}
 function revealSecret(){const message=document.getElementById('secretMessage');const button=document.getElementById('secretButton');if(!message||!button)return;message.classList.remove('hidden');button.textContent='Pakdi gayi! 😂❤️';button.disabled=true;petalShower(24);}
 function openLightbox(index){activePhoto=(index+photos.length)%photos.length;const [caption,id]=photos[activePhoto];document.getElementById('lightboxImage').src=id;document.getElementById('lightboxCaption').textContent=caption;document.getElementById('lightbox').style.display='flex';document.body.style.overflow='hidden'}function stepLightbox(direction){openLightbox(activePhoto+direction)}function closeLightbox(){document.getElementById('lightbox').style.display='none';document.body.style.overflow=''}document.addEventListener('keydown',e=>{if(document.getElementById('lightbox').style.display==='flex'){if(e.key==='Escape')closeLightbox();if(e.key==='ArrowRight')stepLightbox(1);if(e.key==='ArrowLeft')stepLightbox(-1)}})
