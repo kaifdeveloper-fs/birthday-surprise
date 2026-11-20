@@ -126,12 +126,37 @@ section.content{padding:88px 6vw;max-width:1200px;margin:auto}.center{text-align
     <div class="center"><div class="eyebrow">Mere dil ki ek baat</div><h2 class="section-title">Dil Se Likhe Kuch Lafz</h2><p class="section-sub">Ek chhota sa khat, duniya bhar ke pyaar ke saath.</p></div>
     <div class="letter-wrap"><div class="envelope"><div class="script" style="font-size:36px">Tumhare liye, Simran</div><button id="letterButton" class="btn secondary" onclick="revealKhat()">Apna khat kholo</button><article id="letterText" class="letter hidden"><p>Pyari Simran,</p><p>Aaj ka din tumhari khushi ka jashn manane ke liye hai. Dua hai tumhara janmadin dher saari khushiyan, khoobsurat pal aur tumhare dil ki har khwahish lekar aaye.</p><p>Tumhe hamesha muskurane ki wajah mile, zindagi ke har naye mod par himmat mile, aur aise chhote-chhote pal milte rahein jo zindagi ko jaadui bana dein.</p><p>Is duniya ki har khoobsurat cheez par tumhara haq hai.</p><p>Janmadin mubarak, Simran. ❤️</p><div class="sign">Hamesha tumhare pyaar ke saath</div></article></div></div>
   </section>
-  <section id="music" class="content music">
-    <div class="center"><div class="eyebrow">Tumhare din ke naam ek dhun</div><h2 class="section-title">Sirf Tumhare Liye Ek Gaana</h2><p class="section-sub">Woh gaana chuno jo tumhe kisi khoobsurat pal ki yaad dilaye.</p></div>
-    <div class="music-card"><div id="disc" class="disc"></div><div class="music-info"><strong>Hamare pyaar ki dhun</strong><p id="musicStatus">Yahan gaana sunne ke liye apne phone se ek gaana chuno.</p><div class="music-controls"><button id="playButton" onclick="toggleSangeet()" aria-label="Play or pause">▶</button><span style="font-size:10px;color:var(--muted)">Tumhara khaas gaana</span></div></div></div>
-    <div class="upload center">Gaane ki file chuno: <input id="audioUpload" type="file" accept="audio/*" onchange="loadAudio(event)"></div>
-    <audio id="audio" loop></audio>
-  </section>
+  
+<section id="music" class="content music">
+  <div class="center">
+    <div class="eyebrow">Tumhare din ke naam ek dhun</div>
+    <h2 class="section-title">Sirf Tumhare Liye Ek Gaana</h2>
+    <p class="section-sub">
+      Ek chhoti si dhun, jo hamare khoobsurat palon ke naam hai. ❤️
+    </p>
+  </div>
+
+  <div class="music-card">
+    <div id="disc" class="disc"></div>
+
+    <div class="music-info">
+      <strong>Hamare pyaar ki dhun</strong>
+      <p id="musicStatus">Tumhare liye ek khaas gaana ❤️</p>
+
+      <div class="music-controls">
+        <button id="playButton"
+                onclick="toggleSangeet()"
+                aria-label="Play or pause">▶</button>
+        <span style="font-size:10px;color:var(--muted)">
+          Tumhara khaas gaana
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <audio id="audio" src="./birthday-song.mp3" loop preload="auto"></audio>
+</section>
+
   <section id="final" class="content final">
     <div class="eyebrow">Tumhare liye ek aur dua</div><h2 class="section-title">Ek dua maango, Simran.</h2><p class="section-sub">Apni aankhein band karo, ek dua maango aur is chhote se pal ko apna bana lo.</p>
     <div class="candles" id="candles">🕯️ 🕯️ 🕯️</div><div class="cake">🎂</div>
