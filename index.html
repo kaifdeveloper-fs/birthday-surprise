@@ -45,6 +45,18 @@ section.content{padding:88px 6vw;max-width:1200px;margin:auto}.center{text-align
 .game-score{font-size:11px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase}
 @media(max-width:760px){.game-grid{grid-template-columns:1fr}.game-card{padding:19px}.game-card p{min-height:0}}
 @media(max-width:760px){.nav{gap:10px}.nav a{font-size:8px}.photo-grid{gap:17px;padding:18px 12px 28px}.photo{flex-basis:68vw;max-width:245px}section.content{padding:70px 20px}.music-card{padding:20px}.topbar{padding:10px 15px}.brand{font-size:23px}.memories:before,.memories:after{font-size:55px}#lightbox{padding:55px 42px 25px}#lightbox img{max-width:88vw;max-height:70vh}.lightbox-nav{top:auto;bottom:20px}}@media(max-width:390px){.nav a:nth-child(2){display:none}.music-card{gap:12px}.disc{width:58px;height:58px}}
+
+/* Subhi's playful fake-hack surprise */
+.subhi-prank{display:none;margin:22px auto 0;padding:20px 16px;max-width:520px;text-align:left;background:#190f12;border:1px solid #a72f3b;box-shadow:0 0 24px #b52d3b30;color:#ffe9e9}
+.subhi-alert{margin:-20px -16px 16px;padding:13px 10px;text-align:center;background:#a7192b;color:#fff;font-weight:700;letter-spacing:.08em;font-size:13px;animation:subhiPulse 1s infinite alternate}
+.subhi-prank p{color:#ffd9d9;margin:8px 0;font-size:12px;line-height:1.6}
+.subhi-lines{font-family:monospace;font-size:11px;line-height:2;color:#ffb7b7;min-height:112px;white-space:pre-line}
+.subhi-lines .done{color:#ff7777}
+.subhi-result{display:none;margin-top:14px;padding:14px;background:#2b171b;border:1px solid #b94754;text-align:center;color:#fff0ed;font-size:13px;line-height:1.7}
+.subhi-result strong{display:block;color:#ff9da5;font-size:16px;margin-bottom:7px}
+.subhi-prank .btn{display:block;margin:15px auto 0;background:#a7192b;border-color:#d65b67;letter-spacing:.04em}
+@keyframes subhiPulse{from{filter:brightness(.85)}to{filter:brightness(1.2)}}
+
 </style>
 </head>
 <body>
@@ -67,6 +79,18 @@ section.content{padding:88px 6vw;max-width:1200px;margin:auto}.center{text-align
     <p>Kuch pal tab aur bhi khaas ho jaate hain, jab woh sirf hum dono ke beech hote hain.</p>
     <form onsubmit="unlock(event)"><input id="pass" class="password" type="password" placeholder="Apka naam daliye" autocomplete="off" required><button class="btn" type="submit">Tohfa kholo</button></form>
     <div id="gateError"></div>
+    <div id="subhiPrank" class="subhi-prank" aria-live="polite">
+      <div class="subhi-alert">🚨 WARNING: SUBHI KA PHONE HACK HO GAYA! 🚨</div>
+      <p>Unknown user detected... system scan shuru ho raha hai. 😈</p>
+      <div id="subhiScanLines" class="subhi-lines"></div>
+      <div id="subhiResult" class="subhi-result">
+        <strong>😂 RELAX SUBHI! MAZAAK THA!</strong>
+        Phone hack nahi hua, Instagram aur Snapchat bhi bilkul safe hain! 🙈<br>
+        Aise hi hota hai jab doosron ka surprise dekhne ki koshish karte ho!<br>
+        Ab chup-chaap Simran ko bulao... warna agla prank tumhare liye ready hai! 🤣❤️
+        <button type="button" class="btn" onclick="resetSubhiPrank()">Theek hai, Simran ko bulaati hoon 🙈</button>
+      </div>
+    </div>
     <div class="tiny">Ek chhoti si duniya, sirf tumhare liye ♡</div>
   </div>
 </section>
@@ -196,7 +220,56 @@ photos.forEach(([caption,id],i)=>{const card=document.createElement('div');card.
 const photoObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');photoObserver.unobserve(entry.target)}}),{root:grid,threshold:.15});document.querySelectorAll('.photo').forEach(card=>photoObserver.observe(card));
 function scrollMemories(direction){grid.scrollBy({left:direction*Math.min(330,grid.clientWidth*.8),behavior:'smooth'})}
 function showGate(){document.getElementById('welcome').classList.add('hidden');document.getElementById('gate').classList.remove('hidden');document.getElementById('pass').focus()}
-function unlock(e){e.preventDefault();const val=document.getElementById('pass').value;if(val===DEMO_PASSWORD){document.getElementById('gate').classList.add('hidden');document.getElementById('site').style.display='block';window.scrollTo(0,0);petalShower(12)}else{document.getElementById('gateError').textContent='Yeh password sahi nahi lag raha. Phir se koshish karo ♡';document.getElementById('pass').value='';}}
+function unlock(e){
+  e.preventDefault();
+  const input=document.getElementById('pass');
+  const val=input.value.trim();
+  if(val.toLowerCase()==='subhi'){
+    document.getElementById('gateError').textContent='';
+    document.getElementById('subhiPrank').style.display='block';
+    input.value='';
+    runSubhiPrank();
+    return;
+  }
+  if(val===DEMO_PASSWORD){
+    document.getElementById('gate').classList.add('hidden');
+    document.getElementById('site').style.display='block';
+    window.scrollTo(0,0);
+    petalShower(12);
+  }else{
+    document.getElementById('gateError').textContent='Yeh password sahi nahi lag raha. Phir se koshish karo ♡';
+    input.value='';
+  }
+}
+function runSubhiPrank(){
+  const lines=document.getElementById('subhiScanLines');
+  const result=document.getElementById('subhiResult');
+  result.style.display='none';
+  lines.textContent='';
+  const steps=[
+    'Initializing Subhi detection... 100%',
+    'Scanning phone gallery photos... 100%',
+    'Checking Instagram account... HACKED! (just kidding)',
+    'Checking Snapchat account... HACKED! (just kidding)',
+    'Counting how many times Subhi annoyed Simran... 100%',
+    'Finding common sense... ERROR 404 NOT FOUND 😂'
+  ];
+  steps.forEach((step,index)=>{
+    setTimeout(()=>{
+      lines.textContent += (lines.textContent?'\n':'') + '> ' + step;
+      if(index===steps.length-1){
+        setTimeout(()=>{result.style.display='block';result.scrollIntoView({behavior:'smooth',block:'nearest'});},650);
+      }
+    },850*(index+1));
+  });
+}
+function resetSubhiPrank(){
+  document.getElementById('subhiPrank').style.display='none';
+  document.getElementById('subhiScanLines').textContent='';
+  document.getElementById('subhiResult').style.display='none';
+  document.getElementById('pass').value='';
+  document.getElementById('pass').focus();
+}
 function revealKhat(){document.getElementById('letterText').classList.remove('hidden');document.getElementById('letterButton').classList.add('hidden')}
 function revealSecret(){const message=document.getElementById('secretMessage');const button=document.getElementById('secretButton');if(!message||!button)return;message.classList.remove('hidden');button.textContent='Pakdi gayi! 😂❤️';button.disabled=true;petalShower(24);}
 function openLightbox(index){activePhoto=(index+photos.length)%photos.length;const [caption,id]=photos[activePhoto];document.getElementById('lightboxImage').src=id;document.getElementById('lightboxCaption').textContent=caption;document.getElementById('lightbox').style.display='flex';document.body.style.overflow='hidden'}function stepLightbox(direction){openLightbox(activePhoto+direction)}function closeLightbox(){document.getElementById('lightbox').style.display='none';document.body.style.overflow=''}document.addEventListener('keydown',e=>{if(document.getElementById('lightbox').style.display==='flex'){if(e.key==='Escape')closeLightbox();if(e.key==='ArrowRight')stepLightbox(1);if(e.key==='ArrowLeft')stepLightbox(-1)}})
