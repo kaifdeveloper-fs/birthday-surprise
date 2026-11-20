@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="hi-Latn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f1e9" />
+<title>Simran ke liye — Janmadin ka ek khaas tohfa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f8f1e9;--paper:#fffaf4;--rose:#bd8a79;--wine:#754c4b;--gold:#b89565;--ink:#493b38;--muted:#8d7770;--line:#eadbd0;--shadow:0 18px 55px rgba(91,62,53,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300}button,input{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+.bg-floral:before,.bg-floral:after{content:'✿';position:absolute;color:#d7b7a8;opacity:.35;font-size:clamp(80px,14vw,180px);pointer-events:none}.bg-floral:before{top:18px;left:22px;transform:rotate(-22deg)}.bg-floral:after{right:22px;bottom:18px;transform:rotate(28deg)}
+.screen{min-height:100svh;position:relative;overflow:hidden}.welcome{display:grid;place-items:center;padding:40px 20px;background:radial-gradient(ellipse at 50% 40%,#fffaf5 0,#f8f1e9 65%,#f0e3d8 100%)}.welcome-card{width:min(720px,100%);padding:clamp(36px,7vw,76px) 24px;text-align:center;position:relative;border:1px solid rgba(184,149,101,.45);outline:1px solid rgba(184,149,101,.18);outline-offset:8px;background:rgba(255,250,244,.62);box-shadow:var(--shadow);backdrop-filter:blur(5px)}.eyebrow{letter-spacing:.28em;text-transform:uppercase;font-size:10px;color:var(--gold);font-weight:600}.welcome h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(54px,10vw,96px);line-height:.95;margin:24px 0 12px;color:var(--wine)}.script{font-family:'Parisienne',cursive;color:var(--rose)}.date{letter-spacing:.22em;text-transform:uppercase;font-size:11px;color:var(--muted);margin:22px 0}.intro{font-family:'Cormorant Garamond',serif;font-size:23px;color:#806963;margin:0 0 30px}.ornament{color:var(--gold);letter-spacing:.5em;margin:22px 0}.btn{border:1px solid var(--gold);background:linear-gradient(135deg,#c9a47b,#a77c62);color:white;padding:14px 27px;border-radius:2px;letter-spacing:.12em;text-transform:uppercase;font-size:10px;font-weight:600;box-shadow:0 8px 22px #a77c6233;transition:.25s}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px #a77c6244}.btn.secondary{background:transparent;color:var(--wine);box-shadow:none}.tiny{font-size:11px;color:var(--muted);margin-top:20px}
+#gate{display:grid;place-items:center;padding:24px;background:linear-gradient(145deg,#f8f1e9,#f1e2d8)}.gate-card{width:min(420px,100%);text-align:center;background:var(--paper);padding:44px 30px;border:1px solid var(--line);box-shadow:var(--shadow)}.gate-card h2,.section-title{font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--wine)}.gate-card h2{font-size:42px;margin:12px 0}.gate-card p{color:var(--muted);font-size:13px;line-height:1.7}.password{width:100%;padding:14px;border:1px solid var(--line);background:#fffdf9;margin:14px 0 12px;text-align:center;letter-spacing:.2em;outline:none}.password:focus{border-color:var(--gold)}#gateError{color:#a64c4c;font-size:12px;min-height:18px}
+#site{display:none}.topbar{position:sticky;top:0;z-index:5;background:#f8f1e9eF;backdrop-filter:blur(12px);border-bottom:1px solid #e9dbd0;padding:12px 5vw;display:flex;align-items:center;justify-content:space-between}.brand{font-family:'Parisienne',cursive;color:var(--wine);font-size:27px}.nav{display:flex;gap:20px;align-items:center}.nav a{color:var(--muted);text-decoration:none;font-size:10px;letter-spacing:.12em;text-transform:uppercase}.nav a:hover{color:var(--wine)}
+section.content{padding:88px 6vw;max-width:1200px;margin:auto}.center{text-align:center}.section-title{font-size:clamp(42px,6vw,64px);margin:12px 0}.section-sub{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--muted);margin:0 auto 42px;max-width:570px;line-height:1.5}.divider{color:var(--gold);letter-spacing:.6em;font-size:13px;margin:18px 0 24px}
+.memories{background:radial-gradient(ellipse at 50% 15%,#fffdf9 0,#fff8f2 55%,#f7ece5 100%);position:relative;overflow:hidden}.memories:before,.memories:after{content:'✧';position:absolute;color:#c9a47b;opacity:.35;font-size:90px;pointer-events:none}.memories:before{top:155px;left:3vw}.memories:after{right:4vw;bottom:90px}.memory-intro{font-family:'Cormorant Garamond',serif;color:var(--rose);font-size:18px;letter-spacing:.08em;margin:-22px auto 34px}.filmstrip-wrap{position:relative;margin:12px auto 0;max-width:1120px}.photo-grid{display:flex;gap:24px;overflow-x:auto;padding:22px 18px 35px;scroll-snap-type:x mandatory;scroll-behavior:smooth; scrollbar-width:thin;scrollbar-color:#c8a18e #f4e8df}.photo{position:relative;flex:0 0 clamp(190px,22vw,245px);padding:11px 11px 42px;background:linear-gradient(145deg,#fffefa,#f8f0e8);border:1px solid #e7d6ca;box-shadow:0 12px 28px rgba(91,62,53,.13),inset 0 0 0 1px #fff;cursor:pointer;scroll-snap-align:center;transform:rotate(var(--tilt, -2deg));transition:transform .45s,box-shadow .45s,opacity .7s;opacity:0;translate:0 24px}.photo:nth-child(3n+2){--tilt:2.4deg}.photo:nth-child(3n){--tilt:-1deg}.photo.is-visible{opacity:1;translate:0 0}.photo:hover{transform:rotate(0deg) translateY(-8px);box-shadow:0 20px 38px rgba(91,62,53,.2)}.photo:before{content:'';position:absolute;top:-9px;left:50%;width:54px;height:17px;transform:translateX(-50%) rotate(-3deg);background:#d8b99b99;border:1px solid #c5a38366;z-index:2}.photo img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#eadbd0;filter:saturate(.88) sepia(.06);transition:transform .7s,filter .7s}.photo:hover img{filter:saturate(1.04);transform:scale(1.025)}.photo span{position:absolute;bottom:10px;left:8px;right:8px;text-align:center;color:var(--wine);font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.05}.filmstrip-controls{display:flex;justify-content:center;align-items:center;gap:16px;margin:5px auto 0}.filmstrip-controls button,.lightbox-nav{width:40px;height:40px;border:1px solid #d8bcae;border-radius:50%;background:#fffaf5;color:var(--wine);font-size:20px;box-shadow:0 5px 15px #754c4b12}.filmstrip-controls button:hover,.lightbox-nav:hover{background:#f1dfd7}.filmstrip-hint{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}.sample-note{font-size:11px;color:var(--muted);margin-top:28px}
+.letter-wrap{max-width:720px;margin:auto}.envelope{background:linear-gradient(145deg,#fffaf4,#f2e4d9);border:1px solid #e6d4c6;padding:38px 24px;text-align:center;box-shadow:var(--shadow);position:relative}.envelope:before{content:'✧';display:block;font-size:32px;color:var(--gold);margin-bottom:10px}.letter{max-width:560px;margin:28px auto 0;text-align:left;background:#fffdf9;padding:clamp(25px,5vw,48px);border:1px solid #eee1d7;box-shadow:0 8px 30px #6c4b3a0d;line-height:1.9;color:#705d56;font-family:'Cormorant Garamond',serif;font-size:21px}.letter p{margin:0 0 16px}.letter .sign{font-family:'Parisienne',cursive;font-size:30px;color:var(--rose);text-align:right;margin-top:24px}
+.music{background:#f1e5dc}.music-card{max-width:560px;margin:auto;background:#fffaf5;border:1px solid var(--line);padding:30px;display:flex;align-items:center;gap:20px;box-shadow:var(--shadow)}.disc{width:76px;height:76px;border-radius:50%;background:radial-gradient(circle,#f9eee5 0 12%,#bd8a79 13% 16%,#704e4b 17% 55%,#bd8a79 56% 59%,#e8d1c2 60%);flex:none;box-shadow:0 5px 15px #76544a33}.disc.playing{animation:spin 5s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.music-info{flex:1}.music-info strong{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--wine)}.music-info p{font-size:11px;color:var(--muted);margin:4px 0 12px}.music-controls{display:flex;gap:10px;align-items:center}.music-controls button{border:1px solid var(--gold);background:transparent;color:var(--wine);border-radius:50%;width:34px;height:34px}.upload{font-size:11px;color:var(--muted);margin-top:18px}.upload input{max-width:210px;font-size:11px}
+.final{background:radial-gradient(ellipse at center,#fffaf4,#f0e1d6);text-align:center;overflow:hidden}.cake{font-size:94px;line-height:1.3;filter:drop-shadow(0 10px 10px #74504422);margin:14px 0}.candles{font-size:30px;letter-spacing:9px;margin:0 0 18px}.final-message{font-family:'Cormorant Garamond',serif;font-size:25px;color:#806963;max-width:560px;margin:0 auto 28px;line-height:1.5}.footer{text-align:center;padding:25px;color:#9b8379;font-family:'Parisienne',cursive;font-size:23px;background:#f5ebe3}
+#lightbox{position:fixed;inset:0;background:rgba(43,30,29,.94);z-index:20;display:none;align-items:center;justify-content:center;flex-direction:column;gap:15px;padding:50px 65px 30px}#lightbox img{max-width:min(900px,82vw);max-height:76vh;object-fit:contain;padding:12px 12px 48px;background:#fffaf4;box-shadow:0 20px 60px #0008}#lightbox button.close-lightbox{position:absolute;top:15px;right:22px;background:transparent;border:0;color:white;font-size:34px}.lightbox-caption{font-family:'Cormorant Garamond',serif;font-size:23px;color:#f8e9df;text-align:center}.lightbox-nav{position:absolute;top:48%;background:#fffaf5e8}
+.petal{position:fixed;top:-30px;z-index:10;pointer-events:none;color:#c99788;opacity:.65;animation:fall linear forwards}@keyframes fall{to{transform:translate3d(80px,110vh,0) rotate(600deg);opacity:0}}.confetti{position:fixed;z-index:30;top:-15px;width:9px;height:13px;pointer-events:none;animation:confettiFall 3.5s linear forwards}@keyframes confettiFall{to{transform:translateY(110vh) rotate(720deg);opacity:.1}}
+
+.fun-zone{background:linear-gradient(180deg,#fffaf5,#f5e9e0)}
+.game-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:980px;margin:0 auto}
+.game-card{background:#fffdf9;border:1px solid var(--line);padding:22px;box-shadow:0 10px 28px #654b3d10;min-width:0}
+.game-card h3{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:500;color:var(--wine);margin:0 0 7px}
+.game-card p{font-size:12px;line-height:1.65;color:var(--muted);min-height:38px}
+.game-status{font-size:12px;color:var(--wine);min-height:22px;margin:12px 0;font-weight:500}
+.game-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.game-actions .btn{padding:11px 15px;font-size:9px}
+.heart-board,.attitude-board{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:12px 0}
+.tap-cell{min-height:54px;border:1px solid #eadbd0;background:#fbf2eb;border-radius:8px;font-size:25px;color:var(--wine);transition:.15s}
+.tap-cell.active{background:#f0d9d2;transform:scale(.96);border-color:var(--rose)}
+.quiz-question{font-family:'Cormorant Garamond',serif;font-size:23px;color:var(--wine);min-height:56px;margin:14px 0}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.quiz-option{padding:11px 8px;border:1px solid var(--line);background:#fffaf5;color:var(--wine);font-size:11px;border-radius:3px}
+.quiz-option:hover,.quiz-option:focus{background:#f4e4dc;border-color:var(--rose)}
+.match-board{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}
+.match-card{aspect-ratio:1;border:1px solid #e5d1c4;background:linear-gradient(145deg,#fffaf4,#f1e1d7);font-size:25px;border-radius:7px;color:var(--wine)}
+.match-card.revealed,.match-card.matched{background:#f5e5dd;border-color:var(--rose)}
+.match-card.matched{opacity:.55}
+.game-score{font-size:11px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:760px){.game-grid{grid-template-columns:1fr}.game-card{padding:19px}.game-card p{min-height:0}}
+@media(max-width:760px){.nav{gap:10px}.nav a{font-size:8px}.photo-grid{gap:17px;padding:18px 12px 28px}.photo{flex-basis:68vw;max-width:245px}section.content{padding:70px 20px}.music-card{padding:20px}.topbar{padding:10px 15px}.brand{font-size:23px}.memories:before,.memories:after{font-size:55px}#lightbox{padding:55px 42px 25px}#lightbox img{max-width:88vw;max-height:70vh}.lightbox-nav{top:auto;bottom:20px}}@media(max-width:390px){.nav a:nth-child(2){display:none}.music-card{gap:12px}.disc{width:58px;height:58px}}
+</style>
+</head>
+<body>
+<main id="welcome" class="screen welcome bg-floral">
+  <div class="welcome-card">
+    <div class="eyebrow">Tumhare liye ek chhota sa tohfa</div>
+    <div class="ornament">✧ &nbsp; ❀ &nbsp; ✧</div>
+    <h1>Janmadin mubarak,<br><span class="script">Simran</span> <span style="font-family:serif;font-size:.55em">♥</span></h1>
+    <div class="date">27 November 2026</div>
+    <p class="intro">Tumhare liye pyaar se sajaya gaya janmadin ka ek chhota sa tohfa.</p>
+    <button class="btn" onclick="showGate()">Apna tohfa kholo</button>
+    <div class="tiny">Sirf tumhare liye, dher saare pyaar ke saath</div>
+  </div>
+</main>
+<section id="gate" class="screen hidden">
+  <div class="gate-card">
+    <div class="eyebrow">Ek chhota sa raaz, sirf tumhare liye</div>
+    <div class="ornament">✧ ❀ ✧</div>
+    <h2>Ek pyara sa raaz tumhara intezaar kar raha hai</h2>
+    <p>Kuch pal tab aur bhi khaas ho jaate hain, jab woh sirf hum dono ke beech hote hain.</p>
+    <form onsubmit="unlock(event)"><input id="pass" class="password" type="password" placeholder="Apna khaas password daalo" autocomplete="off" required><button class="btn" type="submit">Tohfa kholo</button></form>
+    <div id="gateError"></div>
+    <div class="tiny">Ek chhoti si duniya, sirf tumhare liye ♡</div>
+  </div>
+</section>
+<div id="site">
+  <header class="topbar"><div class="brand">For Simran ♡</div><nav class="nav"><a href="#fun">Masti ka kona</a><a href="#memories">Yaadein</a><a href="#letter">Khat</a><a href="#music">Sangeet</a><a href="#final">Tohfa</a></nav></header>
+  <section class="content center" style="padding-top:90px;padding-bottom:90px">
+    <div class="eyebrow">Aaj ka din sirf tumhara hai</div><div class="divider">✧ ❀ ✧</div>
+    <h2 class="section-title">Tumhara din, tumhare andaaz ka jaadu.</h2>
+    <p class="section-sub">Tumhari har muskurahat, har chhote se pal aur un khoobsurat yaadon ke naam, jo abhi banna baaki hain.</p>
+    <a class="btn" href="#memories" style="display:inline-block;text-decoration:none">Chalo, mere saath yaadon ki sair karo</a>
+  </section>
+  <section id="fun" class="content fun-zone">
+    <div class="center"><div class="eyebrow">Ek badi si muskurahat ke liye chhota sa break</div><h2 class="section-title">Simran’s Masti ka kona</h2><p class="section-sub">Chaar chhote-chhote khel, koi tension nahi. Savdhaan: tum mein zabardast jeetne ka junoon saamne aa sakta hai. 😂</p></div>
+    <div class="game-grid">
+      <article class="game-card" id="catchGame">
+        <div class="eyebrow">Khel 01 · 15 second</div><h3>Mera Pyaar Pakdo ❤️</h3><p>Dil ko idhar-udhar bhaagte hi pakdo. Dekhein tum kitna saara pyaar pakad paati ho!</p>
+        <div class="game-score">Nishaan: <span id="heartScore">0</span> · Samay: <span id="heartTime">15</span>s</div>
+        <div class="heart-board" id="heartBoard"></div><div class="game-status" id="heartStatus">Jab tum taiyaar ho, birthday girl!</div>
+        <div class="game-actions"><button class="btn" id="heartStart" onclick="startHeartGame()">Khel shuru karo</button></div>
+      </article>
+      <article class="game-card" id="quizGame">
+        <div class="eyebrow">Khel 02 · Hamare rishte ka sawaal-jawaab</div><h3>Ek doosre ko behtar kaun jaanta hai? 😏</h3><p>Paanch bahut hi zaroori sawaal. Jawaab thode pakshpaat wale ho sakte hain. Bas keh raha hoon.</p>
+        <div class="game-score" id="quizProgress">Sawaal 1 / 5</div><div class="quiz-question" id="quizQuestion">Hamesha sahi kaun hota hai?</div>
+        <div class="quiz-options" id="quizOptions"></div><div class="game-status" id="quizStatus">Soch samajh kar jawaab dena. 😂</div>
+        <div class="game-actions"><button class="btn secondary" id="quizRestart" onclick="startQuiz()">Dobara khelo</button></div>
+      </article>
+      <article class="game-card" id="attitudeGame">
+        <div class="eyebrow">Khel 03 · 15 second</div><h3>Tumhare Nakhre Pakdo 😎</h3><p>Nakhre wala chehra gayab hone se pehle pakdo. Yeh ek bahut hi vaigyanik nakhra detector hai.</p>
+        <div class="game-score">Pakde: <span id="attitudeScore">0</span> · Samay: <span id="attitudeTime">15</span>s</div>
+        <div class="attitude-board" id="attitudeBoard"></div><div class="game-status" id="attitudeStatus">Thode nakhre pakadne ke liye taiyaar?</div>
+        <div class="game-actions"><button class="btn" id="attitudeStart" onclick="startAttitudeGame()">Khel shuru karo</button></div>
+      </article>
+      <article class="game-card" id="memoryGame">
+        <div class="eyebrow">Khel 04 · Yaadon ki jodi</div><h3>Pyaar Bhari Jodi 💌</h3><p>Patte palto aur chaaron ek jaisi jodiyan dhoondo. Aaram se khelo, beimaani bilkul nahi!</p>
+        <div class="game-score">Chalein: <span id="matchMoves">0</span> · Jodiyan: <span id="matchPairs">0</span>/4</div>
+        <div class="match-board" id="matchBoard"></div><div class="game-status" id="matchStatus">Ek jaisi jodiyan dhoondo!</div>
+        <div class="game-actions"><button class="btn secondary" onclick="newMatchGame()">Patte phir se milao</button></div>
+      </article>
+    </div>
+    <p class="sample-note center">Ek chhoti si yaad: birthday girl har khel jeet sakti hai. Yeh toh banta hai. 😉</p>
+    <article class="game-card center" style="max-width:620px;margin:32px auto 0">
+      <div class="eyebrow">Ek chhota sa raaz 🙈</div>
+      <h3>Isse mat dabana! 😂</h3>
+      <p>Mana kiya tha na click karne se! Phir bhi agar himmat hai toh daba kar dekho.</p>
+      <button class="btn" id="secretButton" onclick="revealSecret()">Bilkul mat dabana 🙈</button>
+      <p id="secretMessage" class="hidden" style="font-family:'Cormorant Garamond',serif;font-size:23px;color:var(--wine);line-height:1.6;margin:22px auto 0;max-width:520px">Mana kiya tha na click karne se! Lekin tumhe toh meri baat kabhi sunni hi nahi hoti. Chalo koi nahi, pyaar toh bahut karta hoon tumse! ❤️🤣</p>
+    </article>
+
+  </section>
+  <section id="memories" class="content memories">
+    <div class="center"><div class="eyebrow">Woh pal jo dil mein bas jaate hain</div><h2 class="section-title">Our Little World of Yaadein</h2><p class="section-sub">Kuch tasveerein un palon ki, jo zindagi ko khoobsurat bana dete hain.</p></div>
+    <p class="memory-intro center">Har tasveer mein ek kahaani, har kahaani mein tum ❤️</p>
+    <div class="filmstrip-wrap"><div class="photo-grid" id="photoGrid" aria-label="Yaadon ki tasveerein"></div><div class="filmstrip-controls"><button type="button" onclick="scrollMemories(-1)" aria-label="Pichhli tasveer">‹</button><span class="filmstrip-hint">Swipe karo · Yaadein dekho</span><button type="button" onclick="scrollMemories(1)" aria-label="Agli tasveer">›</button></div></div>
+    <p class="sample-note center">Yeh hamari 15 khaas yaadein hain — har tasveer mein ek apni si kahaani. ❤️</p>
+  </section>
+  <section id="letter" class="content">
+    <div class="center"><div class="eyebrow">Mere dil ki ek baat</div><h2 class="section-title">Dil Se Likhe Kuch Lafz</h2><p class="section-sub">Ek chhota sa khat, duniya bhar ke pyaar ke saath.</p></div>
+    <div class="letter-wrap"><div class="envelope"><div class="script" style="font-size:36px">Tumhare liye, Simran</div><button id="letterButton" class="btn secondary" onclick="revealKhat()">Apna khat kholo</button><article id="letterText" class="letter hidden"><p>Pyari Simran,</p><p>Aaj ka din tumhari khushi ka jashn manane ke liye hai. Dua hai tumhara janmadin dher saari khushiyan, khoobsurat pal aur tumhare dil ki har khwahish lekar aaye.</p><p>Tumhe hamesha muskurane ki wajah mile, zindagi ke har naye mod par himmat mile, aur aise chhote-chhote pal milte rahein jo zindagi ko jaadui bana dein.</p><p>Is duniya ki har khoobsurat cheez par tumhara haq hai.</p><p>Janmadin mubarak, Simran. ❤️</p><div class="sign">Hamesha tumhare pyaar ke saath</div></article></div></div>
+  </section>
+  <section id="music" class="content music">
+    <div class="center"><div class="eyebrow">Tumhare din ke naam ek dhun</div><h2 class="section-title">Sirf Tumhare Liye Ek Gaana</h2><p class="section-sub">Woh gaana chuno jo tumhe kisi khoobsurat pal ki yaad dilaye.</p></div>
+    <div class="music-card"><div id="disc" class="disc"></div><div class="music-info"><strong>Hamare pyaar ki dhun</strong><p id="musicStatus">Yahan gaana sunne ke liye apne phone se ek gaana chuno.</p><div class="music-controls"><button id="playButton" onclick="toggleSangeet()" aria-label="Play or pause">▶</button><span style="font-size:10px;color:var(--muted)">Tumhara khaas gaana</span></div></div></div>
+    <div class="upload center">Gaane ki file chuno: <input id="audioUpload" type="file" accept="audio/*" onchange="loadAudio(event)"></div>
+    <audio id="audio" loop></audio>
+  </section>
+  <section id="final" class="content final">
+    <div class="eyebrow">Tumhare liye ek aur dua</div><h2 class="section-title">Ek dua maango, Simran.</h2><p class="section-sub">Apni aankhein band karo, ek dua maango aur is chhote se pal ko apna bana lo.</p>
+    <div class="candles" id="candles">🕯️ 🕯️ 🕯️</div><div class="cake">🎂</div>
+    <p class="final-message">Tumhari muskurahat hamesha aaj ki tarah chamakti rahe. Yeh saal tumhare liye pyaar, hansi aur khush rehne ki anagint wajah lekar aaye.</p>
+    <button class="btn" onclick="celebrate()">Mombattiyan bujhao aur dua maango ✨</button>
+    <div class="divider" style="margin-top:35px">✧ ❀ ✧</div><div class="script" style="font-size:40px">Janmadin mubarak, Simran</div>
+  </section>
+  <footer class="footer">Khaas tumhare liye, dher saare pyaar ke saath ♡</footer>
+</div>
+<div id="lightbox" onclick="if(event.target===this)closeLightbox()"><button class="close-lightbox" aria-label="Close" onclick="closeLightbox()">×</button><button class="lightbox-nav" style="left:18px" aria-label="Previous photo" onclick="stepLightbox(-1)">‹</button><img id="lightboxImage" alt="Memory photograph"><div class="lightbox-caption" id="lightboxCaption"></div><button class="lightbox-nav" style="right:18px" aria-label="Next photo" onclick="stepLightbox(1)">›</button></div>
+<script>
+// DEMO ONLY: this client-side password is visible in the source and is NOT secure.
+// Before sharing privately, replace this gate with server-side verification (e.g. Supabase Edge Function).
+const DEMO_PASSWORD = 'simran2026';
+const photos = [
+ ['Ek pyara sa pal','IMG-20261116-WA0059.jpg'],
+ ['Sunehre palon ki yaadein','IMG-20261116-WA0057.jpg'],
+ ['Sabse pyari muskurahatein','IMG-20261116-WA0058.jpg'],
+ ['Yaadgaar din','IMG-20261116-WA0048.jpg'],
+ ['Chhoti baatein, gehre ehsaas','IMG-20261116-WA0047.jpg'],
+ ['Ek khoobsurat nazara','IMG-20261116-WA0041.jpg'],
+ ['Dhoop aur hansi','IMG-20261116-WA0033.jpg'],
+ ['Hamesha rehne wala ehsaas','IMG-20261116-WA0031.jpg'],
+ ['Zindagi ka pasandeeda panna','IMG-20261116-WA0028.jpg'],
+ ['Narm aur sunehre pal','IMG-20261116-WA0026.jpg'],
+ ['Thoda sa jaadu','IMG-20261116-WA0017.jpg'],
+ ['Khoobsurat din','DOC-20261117-WA0010.jpeg'],
+ ['Sambhaal kar rakhne wala pal','DOC-20260505-WA0008.jpeg'],
+ ['Bas yunhi','DOC-20261117-WA0009.jpeg'],
+ ['Abhi aur bhi khoobsurat pal aane hain','DOC-20260427-WA0010.jpeg']
+];
+const grid=document.getElementById('photoGrid');
+let activePhoto=0;
+photos.forEach(([caption,id],i)=>{const card=document.createElement('div');card.className='photo';const img=document.createElement('img');img.loading='lazy';img.alt='Simran ki yaad '+(i+1);img.src=id;const label=document.createElement('span');label.textContent=caption;card.append(img,label);card.onclick=()=>openLightbox(i);grid.append(card)});
+const photoObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');photoObserver.unobserve(entry.target)}}),{root:grid,threshold:.15});document.querySelectorAll('.photo').forEach(card=>photoObserver.observe(card));
+function scrollMemories(direction){grid.scrollBy({left:direction*Math.min(330,grid.clientWidth*.8),behavior:'smooth'})}
+function showGate(){document.getElementById('welcome').classList.add('hidden');document.getElementById('gate').classList.remove('hidden');document.getElementById('pass').focus()}
+function unlock(e){e.preventDefault();const val=document.getElementById('pass').value;if(val===DEMO_PASSWORD){document.getElementById('gate').classList.add('hidden');document.getElementById('site').style.display='block';window.scrollTo(0,0);petalShower(12)}else{document.getElementById('gateError').textContent='Yeh password sahi nahi lag raha. Phir se koshish karo ♡';document.getElementById('pass').value='';}}
+function revealKhat(){document.getElementById('letterText').classList.remove('hidden');document.getElementById('letterButton').classList.add('hidden')}
+function revealSecret(){const message=document.getElementById('secretMessage');const button=document.getElementById('secretButton');if(!message||!button)return;message.classList.remove('hidden');button.textContent='Pakdi gayi! 😂❤️';button.disabled=true;petalShower(24);}
+function openLightbox(index){activePhoto=(index+photos.length)%photos.length;const [caption,id]=photos[activePhoto];document.getElementById('lightboxImage').src=id;document.getElementById('lightboxCaption').textContent=caption;document.getElementById('lightbox').style.display='flex';document.body.style.overflow='hidden'}function stepLightbox(direction){openLightbox(activePhoto+direction)}function closeLightbox(){document.getElementById('lightbox').style.display='none';document.body.style.overflow=''}document.addEventListener('keydown',e=>{if(document.getElementById('lightbox').style.display==='flex'){if(e.key==='Escape')closeLightbox();if(e.key==='ArrowRight')stepLightbox(1);if(e.key==='ArrowLeft')stepLightbox(-1)}})
+const audio=document.getElementById('audio');function loadAudio(e){const f=e.target.files[0];if(!f)return;audio.src=URL.createObjectURL(f);document.getElementById('musicStatus').textContent=f.name;audio.play().then(updatePlay).catch(()=>{});}function toggleSangeet(){if(!audio.src){document.getElementById('musicStatus').textContent='Pehle neeche diye gaye option se apna gaana chuno.';return}if(audio.paused)audio.play().then(updatePlay);else{audio.pause();updatePlay()}}function updatePlay(){const playing=!audio.paused;document.getElementById('playButton').textContent=playing?'Ⅱ':'▶';document.getElementById('disc').classList.toggle('playing',playing)}
+function petalShower(n=18){for(let i=0;i<n;i++){const p=document.createElement('div');p.className='petal';p.textContent=['✿','❀','❧'][Math.floor(Math.random()*3)];p.style.left=Math.random()*100+'vw';p.style.animationDuration=(5+Math.random()*6)+'s';p.style.fontSize=(12+Math.random()*18)+'px';document.body.append(p);setTimeout(()=>p.remove(),12000)}}setInterval(()=>{if(document.getElementById('site').style.display==='block')petalShower(2)},4500);
+function celebrate(){document.getElementById('candles').textContent='✨  ♡  ✨';for(let i=0;i<110;i++){const c=document.createElement('i');c.className='confetti';c.style.left=Math.random()*100+'vw';c.style.background=['#bd8a79','#d8b68d','#f3d9d0','#9d7770','#e7cda9'][i%5];c.style.animationDelay=Math.random()*.8+'s';c.style.animationDuration=(2.5+Math.random()*2)+'s';document.body.append(c);setTimeout(()=>c.remove(),5000)}petalShower(30)}
+
+// Mini games: all run locally in the browser and need no extra services.
+let heartInterval=null,heartCountdown=null,heartRemaining=15,heartPoints=0,heartActive=-1;
+function buildTapBoard(id,kind){const board=document.getElementById(id);board.innerHTML='';for(let i=0;i<9;i++){const b=document.createElement('button');b.className='tap-cell';b.type='button';b.setAttribute('aria-label',kind==='heart'?'Heart target':'Attitude target');b.textContent='·';b.onclick=()=>{if(kind==='heart'&&i===heartActive&&heartRemaining>0){heartPoints++;document.getElementById('heartScore').textContent=heartPoints;moveHeartTarget()}else if(kind==='attitude'&&i===attitudeActive&&attitudeRemaining>0){attitudePoints++;document.getElementById('attitudeScore').textContent=attitudePoints;moveAttitudeTarget()}};board.append(b)}}
+function lightTarget(id,index,emoji){const cells=[...document.getElementById(id).children];cells.forEach((c,i)=>{c.classList.toggle('active',i===index);c.textContent=i===index?emoji:'·'})}
+function moveHeartTarget(){heartActive=Math.floor(Math.random()*9);lightTarget('heartBoard',heartActive,'❤️')}
+function startHeartGame(){clearInterval(heartInterval);clearInterval(heartCountdown);heartPoints=0;heartRemaining=15;document.getElementById('heartScore').textContent='0';document.getElementById('heartTime').textContent='15';document.getElementById('heartStatus').textContent='Jitne ho sake, pakdo!';buildTapBoard('heartBoard','heart');moveHeartTarget();heartInterval=setInterval(moveHeartTarget,720);heartCountdown=setInterval(()=>{heartRemaining--;document.getElementById('heartTime').textContent=heartRemaining;if(heartRemaining<=0){clearInterval(heartInterval);clearInterval(heartCountdown);heartActive=-1;[...document.getElementById('heartBoard').children].forEach(c=>{c.textContent='♡';c.classList.remove('active')});document.getElementById('heartStatus').textContent=heartPoints>=10?'Waah! Itna saara pyaar pakad liya! 😂❤️': 'Arey, woh saare dil toh tumhare liye hi the. ❤️'}},1000)}
+const quizItems=[['Hamesha sahi kaun hota hai?',['Simran, obviously','Me, obviously','We both know it is Simran','Let’s not start a debate'],'Bilkul sahi jawaab. Samajhdaar ho! Birthday girl jeet gayi! 😂'],['Zyada naatak kaun karta hai?',['Simran','Me','Hum dono','Is par koi tippani nahi'],'Kya samajhdari bhara jawaab hai! 😇'],['Birthday cake ka sabse bada tukda kise milna chahiye?',['Simran','Simran again','Still Simran','Baaki options rakhne ki zaroorat hi kya hai?'],'Kya baat hai! Cake par pehla haq tumhara. 🎂'],['Ek doosre ko zyada yaad kaun karta hai?',['I do','You do','Both, secretly','Kuch khaane ke baad phir poochte hain'],'Awww. Hum toh har jawaab maan lenge. ❤️'],['Aakhri faisla kiska chalega?',['Simran','The birthday queen','Simran’s birthday crown','Main khush rehna chahta hoon'],'Khel khatam! Tum toh shandaar tareeke se jeet gayi. Boss toh tum hi ho! 🤣']];let quizIndex=0;
+function startQuiz(){quizIndex=0;renderQuiz()}
+function renderQuiz(){document.getElementById('quizProgress').textContent=`Question ${quizIndex+1} of ${quizItems.length}`;document.getElementById('quizQuestion').textContent=quizItems[quizIndex][0];const box=document.getElementById('quizOptions');box.innerHTML='';quizItems[quizIndex][1].forEach((answer,i)=>{const b=document.createElement('button');b.className='quiz-option';b.textContent=answer;b.onclick=()=>{document.getElementById('quizStatus').textContent=quizItems[quizIndex][2];[...box.children].forEach(x=>x.disabled=true);if(quizIndex<quizItems.length-1){const next=document.createElement('button');next.className='btn';next.style.gridColumn='1/-1';next.textContent='Agla sawaal →';next.onclick=()=>{quizIndex++;renderQuiz()};box.append(next)}else{document.getElementById('quizProgress').textContent='Khel poora · 5/5';const done=document.createElement('button');done.className='btn';done.style.gridColumn='1/-1';done.textContent='Phir se khelo';done.onclick=startQuiz;box.append(done)}};box.append(b)});document.getElementById('quizStatus').textContent='Soch samajh kar jawaab dena. 😂'}
+let attitudeInterval=null,attitudeCountdown=null,attitudeRemaining=15,attitudePoints=0,attitudeActive=-1;
+function moveAttitudeTarget(){attitudeActive=Math.floor(Math.random()*9);lightTarget('attitudeBoard',attitudeActive,'😤')}
+function startAttitudeGame(){clearInterval(attitudeInterval);clearInterval(attitudeCountdown);attitudePoints=0;attitudeRemaining=15;document.getElementById('attitudeScore').textContent='0';document.getElementById('attitudeTime').textContent='15';document.getElementById('attitudeStatus').textContent='Jaldi! Woh nakhra pakdo!';buildTapBoard('attitudeBoard','attitude');moveAttitudeTarget();attitudeInterval=setInterval(moveAttitudeTarget,650);attitudeCountdown=setInterval(()=>{attitudeRemaining--;document.getElementById('attitudeTime').textContent=attitudeRemaining;if(attitudeRemaining<=0){clearInterval(attitudeInterval);clearInterval(attitudeCountdown);attitudeActive=-1;[...document.getElementById('attitudeBoard').children].forEach(c=>{c.textContent='♡';c.classList.remove('active')});document.getElementById('attitudeStatus').textContent=attitudePoints>=10?'Nakhre pakad liye! Phir bhi tum meri favourite ho. 😂':'Itne pyaare nakhre pakadna mushkil hai! ❤️'}},1000)}
+let matchDeck=[],matchFirst=null,matchLock=false,matchMoveCount=0,matchPairCount=0;
+function newMatchGame(){const faces=['🌹','🎂','💌','🦋'];matchDeck=[...faces,...faces].map((face,i)=>({face,id:i,matched:false})).sort(()=>Math.random()-.5);matchFirst=null;matchLock=false;matchMoveCount=0;matchPairCount=0;document.getElementById('matchMoves').textContent='0';document.getElementById('matchPairs').textContent='0';document.getElementById('matchStatus').textContent='Ek jaisi jodiyan dhoondo!';const board=document.getElementById('matchBoard');board.innerHTML='';matchDeck.forEach((card,i)=>{const b=document.createElement('button');b.className='match-card';b.textContent='?';b.setAttribute('aria-label','Chhupa hua milta-julta patta');b.onclick=()=>flipMatch(i,b);board.append(b)})}
+function flipMatch(i,button){const card=matchDeck[i];if(matchLock||card.matched||button.classList.contains('revealed'))return;button.textContent=card.face;button.classList.add('revealed');if(matchFirst===null){matchFirst={i,button};return}matchMoveCount++;document.getElementById('matchMoves').textContent=matchMoveCount;const first=matchFirst;matchFirst=null;if(matchDeck[first.i].face===card.face){card.matched=true;matchDeck[first.i].matched=true;first.button.classList.add('matched');button.classList.add('matched');matchPairCount++;document.getElementById('matchPairs').textContent=matchPairCount;if(matchPairCount===4)document.getElementById('matchStatus').textContent='Saari jodiyan mil gayi! Hamari yaadein bhi kitni khaas hain. ❤️'}else{matchLock=true;setTimeout(()=>{first.button.textContent='?';button.textContent='?';first.button.classList.remove('revealed');button.classList.remove('revealed');matchLock=false},750)}}
+// Prepare game boards when the page loads, and show the first quiz and card shuffle.
+buildTapBoard('heartBoard','heart');buildTapBoard('attitudeBoard','attitude');startQuiz();newMatchGame();
+</script>
+</body>
+</html>
