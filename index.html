@@ -65,7 +65,7 @@ section.content{padding:88px 6vw;max-width:1200px;margin:auto}.center{text-align
     <div class="ornament">✧ ❀ ✧</div>
     <h2>Ek pyara sa raaz tumhara intezaar kar raha hai</h2>
     <p>Kuch pal tab aur bhi khaas ho jaate hain, jab woh sirf hum dono ke beech hote hain.</p>
-    <form onsubmit="unlock(event)"><input id="pass" class="password" type="password" placeholder="Apna khaas password daalo" autocomplete="off" required><button class="btn" type="submit">Tohfa kholo</button></form>
+    <form onsubmit="unlock(event)"><input id="pass" class="password" type="password" placeholder="Apko sab kis name bulate hai" autocomplete="off" required><button class="btn" type="submit">Tohfa kholo</button></form>
     <div id="gateError"></div>
     <div class="tiny">Ek chhoti si duniya, sirf tumhare liye ♡</div>
   </div>
@@ -170,24 +170,26 @@ section.content{padding:88px 6vw;max-width:1200px;margin:auto}.center{text-align
 <script>
 // DEMO ONLY: this client-side password is visible in the source and is NOT secure.
 // Before sharing privately, replace this gate with server-side verification (e.g. Supabase Edge Function).
-const DEMO_PASSWORD = 'simran2026';
+const DEMO_PASSWORD = 'chini';
+
 const photos = [
- ['Ek pyara sa pal','IMG-20261116-WA0059.jpg'],
- ['Sunehre palon ki yaadein','IMG-20261116-WA0057.jpg'],
- ['Sabse pyari muskurahatein','IMG-20261116-WA0058.jpg'],
- ['Yaadgaar din','IMG-20261116-WA0048.jpg'],
- ['Chhoti baatein, gehre ehsaas','IMG-20261116-WA0047.jpg'],
- ['Ek khoobsurat nazara','IMG-20261116-WA0041.jpg'],
- ['Dhoop aur hansi','IMG-20261116-WA0033.jpg'],
- ['Hamesha rehne wala ehsaas','IMG-20261116-WA0031.jpg'],
- ['Zindagi ka pasandeeda panna','IMG-20261116-WA0028.jpg'],
- ['Narm aur sunehre pal','IMG-20261116-WA0026.jpg'],
- ['Thoda sa jaadu','IMG-20261116-WA0017.jpg'],
- ['Khoobsurat din','DOC-20261117-WA0010.jpeg'],
- ['Sambhaal kar rakhne wala pal','DOC-20260505-WA0008.jpeg'],
- ['Bas yunhi','DOC-20261117-WA0009.jpeg'],
- ['Abhi aur bhi khoobsurat pal aane hain','DOC-20260427-WA0010.jpeg']
+  ['Seedhiyon par bhi tumhara andaaz alag hai ❤️', 'IMG-20261116-WA0059.jpg'],
+  ['Peelay rang mein aur bhi pyaari lagti ho 💛', 'IMG-20261116-WA0057.jpg'],
+  ['Tum, tumhari muskurahat aur ek haseen shaam ✨', 'IMG-20261116-WA0058.jpg'],
+  ['Is tasveer mein kuch toh khaas hai... shayad tum ❤️', 'IMG-20261116-WA0048.jpg'],
+  ['Tumhara simple sa andaaz, meri favourite choice 🌸', 'IMG-20261116-WA0047.jpg'],
+  ['Har tasveer mein tumhari ek alag kahaani hai 🥰', 'IMG-20261116-WA0041.jpg'],
+  ['Tumhe dekh kar nazrein wahin ruk jaati hain ❤️', 'IMG-20261116-WA0033.jpg'],
+  ['Mirror selfie ho ya koi aur pal, tum hi highlight ho ✨', 'IMG-20261116-WA0031.jpg'],
+  ['Tumhari aankhon mein ek alag hi baat hai ❤️', 'IMG-20261116-WA0028.jpg'],
+  ['Hijab mein tumhari khoobsurati aur bhi khaas lagti hai 🌷', 'IMG-20261116-WA0026.jpg'],
+  ['Safar kahin ka bhi ho, tumhari smile best hai 💕', 'IMG-20261116-WA0017.jpg'],
+  ['Tumhara yeh andaaz dil ko chhoo jaata hai ❤️', 'DOC-20261117-WA0010.jpeg'],
+  ['Ek saath bitaya hua pal, jo hamesha yaad rahega 🫶', 'DOC-20260505-WA0008.jpeg'],
+  ['Tumhare saath har tasveer meri favourite hai ❤️', 'DOC-20261117-WA0009.jpeg'],
+  ['Tumhari har ada ki apni ek kahaani hai 🌹', 'DOC-20260427-WA0010.jpeg']
 ];
+
 const grid=document.getElementById('photoGrid');
 let activePhoto=0;
 photos.forEach(([caption,id],i)=>{const card=document.createElement('div');card.className='photo';const img=document.createElement('img');img.loading='lazy';img.alt='Simran ki yaad '+(i+1);img.src=id;const label=document.createElement('span');label.textContent=caption;card.append(img,label);card.onclick=()=>openLightbox(i);grid.append(card)});
